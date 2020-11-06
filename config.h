@@ -78,30 +78,110 @@ static Layout layouts[] = {
 
 /* you can specifiy at most 3 arguments */
 static KeyBinding bindings[] = {
-	{ { MOD, '\r',         }, { create,         { NULL }                    } },
+	{ { MOD, 'a',          }, { togglerunall,   { NULL }                    } },
+	/*{ { MOD, 'A',          }, { TO FILL                                   } },*/
+
+	{ { MOD, 'b',          }, { setlayout,      { "TTT" }                   } },
+	/*{ { MOD, 'B',          }, { TO FILL                                   } },*/
+
+	/*{ { MOD, 'c',          }, { TO FILL                                   } },*/
 	{ { MOD, 'C',          }, { create,         { NULL, NULL, "$CWD" }      } },
-	{ { MOD, 'q',          }, { killclient,     { NULL }                    } },
+
+	{ { MOD, 'd',          }, { incnmaster,     { "-1" }                    } },
+	/*{ { MOD, 'D',          }, { TO FILL                                   } },*/
+
+	{ { MOD, 'e',          }, { copymode,       { "dvtm-editor" }           } },
+	{ { MOD, 'E',          }, { copymode,       { "dvtm-pager" }            } },
+
+	{ { MOD, 'f',          }, { setlayout,      { "[]=" }                   } },
+	/*{ { MOD, 'F',          }, { TO FILL                                   } },*/
+
+	{ { MOD, 'g',          }, { setlayout,      { "+++" }                   } },
+	/*{ { MOD, 'G',          }, { TO FILL                                   } },*/
+
+	{ { MOD, 'h',          }, { setmfact,       { "-0.05" }                 } },
+	{ { MOD, 'H',          }, { focusleft,      { NULL }                    } },
+
+	{ { MOD, 'i',          }, { incnmaster,     { "+1" }                    } },
+	/*{ { MOD, 'I',          }, { TO FILL                                   } },*/
+
+
 	{ { MOD, 'j',          }, { focusnext,      { NULL }                    } },
 	{ { MOD, 'J',          }, { focusdown,      { NULL }                    } },
-	{ { MOD, 'K',          }, { focusup,        { NULL }                    } },
-	{ { MOD, 'H',          }, { focusleft,      { NULL }                    } },
-	{ { MOD, 'L',          }, { focusright,     { NULL }                    } },
+
 	{ { MOD, 'k',          }, { focusprev,      { NULL }                    } },
-	{ { MOD, 'f',          }, { setlayout,      { "[]=" }                   } },
-	{ { MOD, 'g',          }, { setlayout,      { "+++" }                   } },
-	{ { MOD, 'b',          }, { setlayout,      { "TTT" }                   } },
-	{ { MOD, 'm',          }, { setlayout,      { "[ ]" }                   } },
-	{ { MOD, ' ',          }, { setlayout,      { NULL }                    } },
-	{ { MOD, 'i',          }, { incnmaster,     { "+1" }                    } },
-	{ { MOD, 'd',          }, { incnmaster,     { "-1" }                    } },
-	{ { MOD, 'h',          }, { setmfact,       { "-0.05" }                 } },
+	{ { MOD, 'K',          }, { focusup,        { NULL }                    } },
+
 	{ { MOD, 'l',          }, { setmfact,       { "+0.05" }                 } },
-	{ { MOD, '.',          }, { toggleminimize, { NULL }                    } },
+	{ { MOD, 'L',          }, { focusright,     { NULL }                    } },
+
+	{ { MOD, 'm',          }, { setlayout,      { "[ ]" }                   } },
+	{ { MOD, 'M',          }, { togglemouse,    { NULL }                    } },
+
+	/*{ { MOD, 'n',          }, { TO FILL                                   } },*/
+	/*{ { MOD, 'N',          }, { TO FILL                                   } },*/
+
+	/*{ { MOD, 'o',          }, { TO FILL                                   } },*/
+	/*{ { MOD, 'O',          }, { TO FILL                                   } },*/
+
+	{ { MOD, 'p',          }, { paste,          { NULL }                    } },
+	/*{ { MOD, 'P',          }, { TO FILL                                   } },*/
+
+	{ { MOD, 'q',          }, { killclient,     { NULL }                    } },
+	/*{ { MOD, 'Q',          }, { TO FILL                                   } },*/
+	{ { MOD, 'q', 'q',     }, { quit,           { NULL }                    } },
+
+	{ { MOD, 'r',          }, { redraw,         { NULL }                    } },
+	/*{ { MOD, 'R',          }, { TO FILL                                   } },*/
+
 	{ { MOD, 's',          }, { togglebar,      { NULL }                    } },
 	{ { MOD, 'S',          }, { togglebarpos,   { NULL }                    } },
-	{ { MOD, 'M',          }, { togglemouse,    { NULL }                    } },
+
+	{ { MOD, 't', '0'      }, { tag,            { NULL }                    } },
+
+	/*{ { MOD, 'u',          }, { TO FILL                                   } },*/
+	/*{ { MOD, 'U',          }, { TO FILL                                   } },*/
+
+	{ { MOD, 'v', '0'      }, { view,           { NULL }                    } },
+	{ { MOD, 'v', '\t',    }, { viewprevtag,    { NULL }                    } },
+
+	/*{ { MOD, 'w',          }, { TO FILL                                   } },*/
+	/*{ { MOD, 'W',          }, { TO FILL                                   } },*/
+
+	/*{ { MOD, 'x',          }, { TO FILL                                   } },*/
+	/*{ { MOD, 'X',          }, { TO FILL                                   } },*/
+
+	/*{ { MOD, 'y',          }, { TO FILL                                   } },*/
+	/*{ { MOD, 'Y',          }, { TO FILL                                   } },*/
+
+	/*{ { MOD, 'z',          }, { TO FILL                                   } },*/
+	/*{ { MOD, 'Z',          }, { TO FILL                                   } },*/
+
+	{ { MOD, '0',          }, { view,           { NULL }                    } },
+	{ { MOD, '1',          }, { view,           { tags[0] }                 } },
+	{ { MOD, '2',          }, { view,           { tags[1] }                 } },
+	{ { MOD, '3',          }, { view,           { tags[2] }                 } },
+	{ { MOD, '4',          }, { view,           { tags[3] }                 } },
+	{ { MOD, '5',          }, { view,           { tags[4] }                 } },
+
+	{ { MOD, ' ',          }, { setlayout,      { NULL }                    } },
+	{ { MOD, '\r',         }, { create,         { NULL }                    } },
 	{ { MOD, '\n',         }, { zoom ,          { NULL }                    } },
+	{ { MOD, '\t',         }, { focuslast,      { NULL }                    } },
+
+	{ { MOD, '.',          }, { toggleminimize, { NULL }                    } },
+	{ { MOD, '?',          }, { create,         { "man dvtm", "dvtm help" } } },
+
 	{ { MOD, '+',          }, { zoom ,          { NULL }                    } },
+	{ { MOD, '/',          }, { copymode,       { "dvtm-pager", "/" }       } },
+
+	{ { MOD, CTRL('L'),    }, { redraw,         { NULL }                    } },
+	{ { MOD, KEY_PPAGE,    }, { scrollback,     { "-1" }                    } },
+	{ { MOD, KEY_NPAGE,    }, { scrollback,     { "1"  }                    } },
+	{ { MOD, MOD,          }, { send,           { (const char []){MOD, 0} } } },
+	{ { KEY_SPREVIOUS,     }, { scrollback,     { "-1" }                    } },
+	{ { KEY_SNEXT,         }, { scrollback,     { "1"  }                    } },
+
 	{ { MOD, KEY_F(1),     }, { focusn,         { "1" }                     } },
 	{ { MOD, KEY_F(2),     }, { focusn,         { "2" }                     } },
 	{ { MOD, KEY_F(3),     }, { focusn,         { "3" }                     } },
@@ -111,30 +191,7 @@ static KeyBinding bindings[] = {
 	{ { MOD, KEY_F(7),     }, { focusn,         { "7" }                     } },
 	{ { MOD, KEY_F(8),     }, { focusn,         { "8" }                     } },
 	{ { MOD, KEY_F(9),     }, { focusn,         { "9" }                     } },
-	{ { MOD, '\t',         }, { focuslast,      { NULL }                    } },
-	{ { MOD, 'q', 'q',     }, { quit,           { NULL }                    } },
-	{ { MOD, 'a',          }, { togglerunall,   { NULL }                    } },
-	{ { MOD, CTRL('L'),    }, { redraw,         { NULL }                    } },
-	{ { MOD, 'r',          }, { redraw,         { NULL }                    } },
-	{ { MOD, 'e',          }, { copymode,       { "dvtm-editor" }           } },
-	{ { MOD, 'E',          }, { copymode,       { "dvtm-pager" }            } },
-	{ { MOD, '/',          }, { copymode,       { "dvtm-pager", "/" }       } },
-	{ { MOD, 'p',          }, { paste,          { NULL }                    } },
-	{ { MOD, KEY_PPAGE,    }, { scrollback,     { "-1" }                    } },
-	{ { MOD, KEY_NPAGE,    }, { scrollback,     { "1"  }                    } },
-	{ { MOD, '?',          }, { create,         { "man dvtm", "dvtm help" } } },
-	{ { MOD, MOD,          }, { send,           { (const char []){MOD, 0} } } },
-	{ { KEY_SPREVIOUS,     }, { scrollback,     { "-1" }                    } },
-	{ { KEY_SNEXT,         }, { scrollback,     { "1"  }                    } },
-	{ { MOD, '0',          }, { view,           { NULL }                    } },
-	{ { MOD, '1',          }, { view,           { tags[0] }                 } },
-	{ { MOD, '2',          }, { view,           { tags[1] }                 } },
-	{ { MOD, '3',          }, { view,           { tags[2] }                 } },
-	{ { MOD, '4',          }, { view,           { tags[3] }                 } },
-	{ { MOD, '5',          }, { view,           { tags[4] }                 } },
-	{ { MOD, 'v', '0'      }, { view,           { NULL }                    } },
-	{ { MOD, 'v', '\t',    }, { viewprevtag,    { NULL }                    } },
-	{ { MOD, 't', '0'      }, { tag,            { NULL }                    } },
+
 	TAGKEYS( '1',                              0)
 	TAGKEYS( '2',                              1)
 	TAGKEYS( '3',                              2)
