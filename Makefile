@@ -17,7 +17,7 @@ dvtm: config.h config.mk *.c *.h
 	${CC} ${CFLAGS} ${SRC} ${LDFLAGS} ${LIBS} -o $@
 
 dvtm-editor: dvtm-editor.c
-	${CC} ${CFLAGS} $^ ${LDFLAGS} -o $@
+	${CC} ${CFLAGS} dvtm-editor.c ${LDFLAGS} -o $@
 
 man:
 	@for m in ${MANUALS}; do \
