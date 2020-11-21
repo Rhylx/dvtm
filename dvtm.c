@@ -414,13 +414,13 @@ draw_border(Client *c) {
 		c->title[maxlen] = '\0';
 	}
 
-	/*mvwprintw(c->window, 0, 2, "[%s%s#%d]",
+	mvwprintw(c->window, 0, 2, "",
 	          *c->title ? c->title : "",
 	          *c->title ? " | " : "",
 	          c->order);
 	if (t)
 		c->title[maxlen] = t;
-	wmove(c->window, y, x);*/
+	wmove(c->window, y, x);
 }
 
 static void
